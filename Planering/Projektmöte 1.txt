@@ -1,0 +1,6 @@
+2015-03-30 Projektarbete Grupp 3 - Minushögskolan
+
+Projektmöte 1: Använder Github, jocke skapar repository , länk:  https://github.com/hobbe84/Projektarbete.git 
+
+Funderar på individuellt tabellschema för databas till minushögskolan till ons 1/4.
+
