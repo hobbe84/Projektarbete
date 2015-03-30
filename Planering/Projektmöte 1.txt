@@ -4,3 +4,5 @@ Projektmöte 1: Använder Github, jocke skapar repository , länk:  https://github.
 
 Funderar på individuellt tabellschema för databas till minushögskolan till ons 1/4.
 
+Närvarande: Andreas G, Robin, Jocke.
+
