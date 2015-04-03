@@ -74,7 +74,7 @@ CREATE TABLE Minushogskolan.Grades
 IF NOT EXISTS(SELECT * FROM sys.objects
 				WHERE name = 'Minushogskolan.ActiveCourse')
 
-CREATE TABLE Minushoskolan.ActiveCourse
+CREATE TABLE Minushogskolan.ActiveCourse
 (
 	ID int not null IDENTITY(1,1),
 	CourseID int not null,
@@ -85,9 +85,9 @@ CREATE TABLE Minushoskolan.ActiveCourse
 
 	CONSTRAINT PK_ActiveCourse_ID PRIMARY KEY (ID),
 	CONSTRAINT FK_ActiveCourse_Course_ID
-			FOREIGN KEY (CourseID) REFERENCES Minushoskolan.Course(ID),
+			FOREIGN KEY (CourseID) REFERENCES Minushogskolan.Course(ID),
 	CONSTRAINT FK_ActiveCourse_Teacher_ID
-				FOREIGN KEY (TeacherID) REFERENCES Minushogkoslan.Teacher(ID)
+				FOREIGN KEY (TeacherID) REFERENCES Minushogskolan.Teacher(ID)
 );
 
 IF NOT EXISTS(SELECT * FROM sys.objects
