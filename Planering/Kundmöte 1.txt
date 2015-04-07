@@ -4,6 +4,8 @@ träffat kund, bestämt layout och design
 
 kunden ville ha enkel design och nertonade färger 
 
-CRUD applikation 
+CRUD applikation med kurs register
+
+Kunna söka på student,lärare och kurser
 
 Närvarande Jocke, Andreas G, Robin
