@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="986c97d18a5f4086812154fdc9da002e" Name="Diagram1">
+        <EntityTypeShape EntityType="MinushogskolanDbModel.ActiveCourse" Width="1.5" PointX="4.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinushogskolanDbModel.Course" Width="1.5" PointX="1.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinushogskolanDbModel.CourseStudent" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinushogskolanDbModel.Grade" Width="1.5" PointX="11.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinushogskolanDbModel.Student" Width="1.5" PointX="7.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinushogskolanDbModel.Teacher" Width="1.5" PointX="4.5" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="MinushogskolanDbModel.FK_ActiveCourse_Course_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="MinushogskolanDbModel.FK_ActiveCourse_Teacher_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="MinushogskolanDbModel.FK_CourseStudent_ActiveCourse_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="MinushogskolanDbModel.FK_CourseStudent_Grades_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="MinushogskolanDbModel.FK_CourseStudent_Student_ID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
