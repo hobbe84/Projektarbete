@@ -1,0 +1,14 @@
+Projektmöte 2
+
+skapat ett styrdokument
+ 
+skapat user stories 
+
+ska skrivet projektdagbok till 10/4 individuellt
+
+fördelat arbetet 
+Jocke = Read, Delete med Historik
+Robin = create, Update
+Andreas G = Views / Partials
+
+Närvarande Jocke, Robin, Andreas G

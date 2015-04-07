@@ -1,0 +1,18 @@
+			User Stories
+skapa databas      Klar
+fyll den med junk  Klar
+skapa layout       Klar
+startsida	   Klar
+Create
+Read  
+Historik
+Update		   
+Delete
+Views partials 
+Repository 
+Sökning/Sorting
+
+
+Wish List
+
+Utskrift
