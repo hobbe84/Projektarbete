@@ -1,0 +1,10 @@
+C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.dll.config
+C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.dll
+C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.pdb
+C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.dll
+C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.xml
+C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.csprojResolveAssemblyReference.cache
+C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.dll
+C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.pdb
