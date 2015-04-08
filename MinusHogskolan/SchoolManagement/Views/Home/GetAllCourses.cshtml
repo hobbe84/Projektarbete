@@ -10,7 +10,9 @@
                 <div class="col-lg-12">
                     <h2 class="col-lg-offset-4">KURSER</h2>
                     <div style="margin-bottom:20px;">
-                        @Html.ActionLink("Skapa ny kurs", "AddCourse", null, new { @class = "btn btn-primary" })
+                        @*<a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="margin-top:25px">Dölj/Visa Menyn</a>*@
+                        @Html.ActionLink("Dölj/Visa Menyn", "#menu-toggle", null, new { @class = "btn btn-default", @id = "menu-toggle" })
+                        @Html.ActionLink("Registrera ny Kurs", "AddCourse", null, new { @class = "btn btn-primary" })
                     </div>
                     <table class="table table-hover">
                         <tr>
@@ -33,12 +35,12 @@
                             <tr>
                                 <td style="width:50px;">
                                     <a href="@Url.Action("EditCourse", new{ ID = item.ID})">
-                                        <span class="glyphicon glyphicon-edit"></span>
+                                        <span title="Uppdatera" class="glyphicon glyphicon-edit"></span>
                                     </a>
                                 </td>
                                 <td style="width:50px;">
                                     <a href="@Url.Action("DeleteCourse", new{ ID = item.ID})">
-                                        <span class="glyphicon glyphicon-trash"></span>
+                                        <span title="Avregistrera" class="glyphicon glyphicon-trash"></span>
                                     </a>
                                 </td>
                                 <td>
@@ -53,7 +55,6 @@
                             </tr>
                         }
                     </table>
-                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="margin-top:25px">Dölj/Visa Menyn</a>
                 </div>
             </div>
         </div>

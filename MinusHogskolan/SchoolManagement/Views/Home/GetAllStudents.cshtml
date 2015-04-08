@@ -10,7 +10,8 @@
                 <h2 class="col-lg-offset-4">STUDENTER</h2>
 
                 <div style="margin-bottom:20px;">
-                    @Html.ActionLink("Ny Student", "AddStudent", null, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Dölj/Visa Menyn", "#menu-toggle", null, new { @class = "btn btn-default", @id = "menu-toggle" })
+                    @Html.ActionLink("Registrera ny Student", "AddStudent", null, new { @class = "btn btn-primary" })
                 </div>
                 <table class="table table-hover">
                     <tr>
@@ -39,12 +40,12 @@
                         <tr>
                             <td style="width:50px;">
                                 <a href="@Url.Action("EditStudent", new{ ID = item.ID})">
-                                    <span class="glyphicon glyphicon-edit"></span>
+                                    <span title="Uppdatera" class="glyphicon glyphicon-edit"></span>
                                 </a>
                             </td>
                             <td style="width:50px;">
                                 <a href="@Url.Action("DeleteStudent", new{ ID = item.ID})">
-                                    <span class="glyphicon glyphicon-trash"></span>
+                                    <span title="Avregistrera" class="glyphicon glyphicon-trash"></span>
                                 </a>
                             </td>
                             <td>
@@ -65,7 +66,6 @@
                         </tr>
                     }
                 </table>
-                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="margin-top:25px">Dölj/Visa Menyn</a>
             </div>
         </div>
     </div>

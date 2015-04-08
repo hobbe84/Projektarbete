@@ -1,0 +1,66 @@
+﻿@model SchoolManagement.Models.Teachers
+
+@{
+    ViewBag.Title = "Ta bort Lärare";
+}
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <h2 class="text-danger">Vill du avaktivera läraren?</h2>
+                <div>
+                    <hr style="margin-bottom:20px;" />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.FirstName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.FirstName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.LastName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.LastName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.BirthDate)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.BirthDate)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Address)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Address)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.City)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.City)
+                        </dd>
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary()
+                        <div class="form-actions no-color" style="margin-top:50px;">
+                            <input type="submit" value="Avaktivera" class="btn btn-danger" />
+                            @Html.ActionLink("Tillbaka till Listan", "GetAllStudents", "Home", null, new { @class = "btn btn-info" })
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

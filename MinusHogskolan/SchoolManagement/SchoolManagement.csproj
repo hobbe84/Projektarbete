@@ -127,6 +127,8 @@
     <Content Include="Views\Home\GetAllTeachers.cshtml" />
     <Content Include="Views\Home\GetAllStudents.cshtml" />
     <Content Include="Views\Home\DeleteCourse.cshtml" />
+    <Content Include="Views\Home\DeleteStudent.cshtml" />
+    <Content Include="Views\Home\DeleteTeacher.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\toastr.js" />
