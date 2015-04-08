@@ -24,7 +24,7 @@
     z-index: 1000;
     /*position: absolute;*/
     position: fixed;
-    top:0;
+    top:80px;
     left: 200px;
     width: 200px;
     height: 100%;
@@ -44,6 +44,7 @@
 #page-content-wrapper {
     width: 100%;
     position: absolute;
+    top:100px;
     padding: 10px;
 }
 
@@ -87,7 +88,7 @@
 }
 
 .sidebar-nav > .sidebar-brand {
-    margin-top:65px;
+    margin-top:20px;
     height: 50px;
     font-size: 24px;
     /*line-height: 50px;*/
