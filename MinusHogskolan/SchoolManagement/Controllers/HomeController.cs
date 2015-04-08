@@ -115,9 +115,27 @@ namespace SchoolManagement.Controllers
             return View(course);
         }
         [HttpPost]
+        [ActionName("DeleteCourse")]
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteCourse(int id)
         {
-            return View();
+            try
+            {
+                using (var ctx = new MinushogskolanDbEntities())
+                {
+                    var query = ctx.Courses
+                        .FirstOrDefault(c => c.ID == id);
+                        
+
+                    query.ActiveCourse = false;
+                    ctx.SaveChanges();
+                }
+            }
+            catch 
+            {
+                return RedirectToAction("DeleteCourse", new { id = id });
+            }
+            return RedirectToAction("GetAllCourses");
         }
         [HttpGet]
         public ActionResult DeleteStudent(int? id)
@@ -125,9 +143,27 @@ namespace SchoolManagement.Controllers
             return View();
         }
         [HttpPost]
+        [ActionName("DeleteStudent")]
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteStudent(int id)
         {
-            return View();
+            try
+            {
+                using (var ctx = new MinushogskolanDbEntities())
+                {
+                    var query = ctx.Students
+                        .FirstOrDefault(u => u.ID == id);
+
+
+                    query.ActiveStudent = false;
+                    ctx.SaveChanges();
+                }
+            }
+            catch
+            {
+                return RedirectToAction("DeleteStudent", new { id = id });
+            }
+            return RedirectToAction("GetAllStudents");
         }
         [HttpGet]
         public ActionResult DeleteTeacher(int? id)
@@ -135,9 +171,27 @@ namespace SchoolManagement.Controllers
             return View();
         }
         [HttpPost]
+        [ActionName("DeleteTeacher")]
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteTeacher(int id)
         {
-            return View();
+            try
+            {
+                using (var ctx = new MinushogskolanDbEntities())
+                {
+                    var query = ctx.Teachers
+                        .FirstOrDefault(c => c.ID == id);
+
+
+                    query.ActiveTeacher = false;
+                    ctx.SaveChanges();
+                }
+            }
+            catch
+            {
+                return RedirectToAction("DeleteTeacher", new { id = id });
+            }
+            return RedirectToAction("GetAllTeachers");
         }
 
 

@@ -1,17 +1,17 @@
 ﻿@model SchoolManagement.Models.Courses
 
 @{
-    ViewBag.Title = "TA BORT KURSER";
+    ViewBag.Title = "Ta bort kurs";
 }
 <div id="page-content-wrapper">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="text-center" style="margin-top:0px">@Model.Name</h2>
+                <h2 class="col-lg-offset-4">@Model.Name</h2>
 
                 <h4>Vill du avaktivera kursen @Model.Name?</h4>
                 <div>
-                    <hr />
+                    <hr style="margin-bottom:20px;" />
                     <dl class="dl-horizontal">
                         <dt>
                             @Html.DisplayNameFor(model => model.Name)
@@ -41,12 +41,13 @@
                     @using (Html.BeginForm())
                     {
                         @Html.AntiForgeryToken()
-
-                        <div class="form-actions no-color">
-                            <input type="submit" value="Avaktivera" class="btn btn-danger" /> |
-                            @Html.ActionLink("Back to List", "Index")
+                        @Html.ValidationSummary()
+                        <div class="form-actions no-color" style="margin-top:50px;">
+                            <input type="submit" value="Avaktivera"  class="btn btn-danger" />
+                            @Html.ActionLink("Tillbaka till Listan", "GetAllCourses", "Home", null, new { @class = "btn btn-info" })
                         </div>
                     }
+                    
                 </div>
             </div>
         </div>
