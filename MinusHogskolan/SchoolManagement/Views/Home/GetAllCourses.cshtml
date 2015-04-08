@@ -4,7 +4,7 @@
     ViewBag.Title = "KURSER";
 }
 
-<h2>KURSER</h2>
+<h2 class="text-center" style="margin-top:0px">KURSER</h2>
 
 <div style="margin-bottom:10px;">    
     @Html.ActionLink("Skapa ny kurs", "AddCourse", null, new { @class = "btn btn-primary" })   
@@ -32,7 +32,7 @@
             </a>
         </td>
         <td style="width:50px;">
-            <a href="@Url.Action("DeleteCourse", new{ ID = item.ID})">
+            <a href="@Url.Action("DeleteCourse", new { ID = item.ID })">
                 <span class="glyphicon glyphicon-trash"></span>
             </a>
         </td>

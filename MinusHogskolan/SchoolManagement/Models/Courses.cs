@@ -16,7 +16,7 @@ namespace SchoolManagement.Models
         [DisplayName("Beskrivning")]
         public string Info { get; set; }
 
-        [DisplayName("Antal poäng")]
+        [DisplayName("YH Poäng")]
         public int Points { get; set; }
 
         public bool ActiveCourse { get; set; }

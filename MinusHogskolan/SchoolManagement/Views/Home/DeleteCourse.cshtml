@@ -1,0 +1,54 @@
+﻿@model SchoolManagement.Models.Courses
+
+@{
+    ViewBag.Title = "TA BORT KURSER";
+}
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="text-center" style="margin-top:0px">@Model.Name</h2>
+
+                <h4>Vill du avaktivera kursen @Model.Name?</h4>
+                <div>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Info)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Info)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Points)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Points)
+                        </dd>
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Avaktivera" class="btn btn-danger" /> |
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

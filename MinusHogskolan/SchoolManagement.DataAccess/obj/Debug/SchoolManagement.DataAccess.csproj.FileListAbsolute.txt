@@ -8,3 +8,22 @@ C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.Dat
 C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.csprojResolveAssemblyReference.cache
 C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.dll
 C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.pdb
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.dll.config
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.dll
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.pdb
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.dll
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.xml
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.csprojResolveAssemblyReference.cache
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.dll
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.pdb
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.dll.config
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.dll
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.pdb
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.dll
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.pdb
