@@ -1,2 +1,2 @@
 # Projektarbete
-Grupparbete MinusHögskolan av Jocke, Andreas och Robin
+Grupparbete MinusHögskolan av Joacim J, Andreas G och Robin E Grupp 3
