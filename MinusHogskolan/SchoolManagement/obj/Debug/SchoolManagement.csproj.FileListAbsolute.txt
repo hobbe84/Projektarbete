@@ -1,45 +1,27 @@
-C:\Code\MinusHogskolan\SchoolManagement\bin\SchoolManagement.dll.config
-C:\Code\MinusHogskolan\SchoolManagement\bin\SchoolManagement.dll
-C:\Code\MinusHogskolan\SchoolManagement\bin\SchoolManagement.pdb
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Helpers.dll
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Mvc.dll
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Razor.dll
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Webpages.Deployment.dll
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Webpages.dll
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Webpages.Razor.dll
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Razor.xml
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Webpages.xml
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Webpages.Deployment.xml
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Webpages.Razor.xml
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Helpers.xml
-C:\Code\MinusHogskolan\SchoolManagement\bin\System.Web.Mvc.xml
-C:\Code\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.csprojResolveAssemblyReference.cache
-C:\Code\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.dll
-C:\Code\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.pdb
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.dll.config
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.dll
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.pdb
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\EntityFramework.dll
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\EntityFramework.SqlServer.dll
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.DataAccess.dll
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.Helpers.dll
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.Mvc.dll
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.Razor.dll
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Deployment.dll
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.dll
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Razor.dll
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.DataAccess.pdb
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\EntityFramework.xml
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\EntityFramework.SqlServer.xml
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.Helpers.xml
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.Mvc.xml
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.Razor.xml
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.xml
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Deployment.xml
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Razor.xml
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.csprojResolveAssemblyReference.cache
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.dll
-C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.pdb
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\SchoolManagement.dll.config
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\SchoolManagement.dll
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\SchoolManagement.pdb
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\EntityFramework.dll
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\EntityFramework.SqlServer.dll
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\SchoolManagement.DataAccess.dll
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.Helpers.dll
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.Mvc.dll
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.Razor.dll
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.dll
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Razor.dll
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\SchoolManagement.DataAccess.pdb
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\EntityFramework.xml
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\EntityFramework.SqlServer.xml
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.Helpers.xml
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.Mvc.xml
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.Razor.xml
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.xml
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Razor.xml
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.csprojResolveAssemblyReference.cache
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.dll
+C:\Users\Hobbe\Desktop\Projektarbete-AG_Minushogskolan\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.pdb
 C:\Code\Projektarbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.dll.config
 C:\Code\Projektarbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.dll
 C:\Code\Projektarbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.pdb
@@ -64,27 +46,3 @@ C:\Code\Projektarbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Ra
 C:\Code\Projektarbete\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.csprojResolveAssemblyReference.cache
 C:\Code\Projektarbete\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.dll
 C:\Code\Projektarbete\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.pdb
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.dll.config
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.dll
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.pdb
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\EntityFramework.dll
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\EntityFramework.SqlServer.dll
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.DataAccess.dll
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.Helpers.dll
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.Mvc.dll
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.Razor.dll
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.dll
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Razor.dll
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\SchoolManagement.DataAccess.pdb
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\EntityFramework.xml
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\EntityFramework.SqlServer.xml
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.Helpers.xml
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.Mvc.xml
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.Razor.xml
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.xml
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.Razor.xml
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.csprojResolveAssemblyReference.cache
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.dll
-C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.pdb

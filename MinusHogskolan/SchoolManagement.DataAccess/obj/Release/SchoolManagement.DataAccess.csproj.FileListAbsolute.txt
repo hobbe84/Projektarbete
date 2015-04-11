@@ -1,0 +1,9 @@
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Release\SchoolManagement.DataAccess.dll.config
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Release\SchoolManagement.DataAccess.dll
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Release\SchoolManagement.DataAccess.pdb
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Release\EntityFramework.dll
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Release\EntityFramework.xml
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Release\SchoolManagement.DataAccess.dll
+C:\Users\Hobbe\Documents\Projektbaserad webbutveckling\Grupparbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Release\SchoolManagement.DataAccess.pdb

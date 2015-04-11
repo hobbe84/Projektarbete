@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MinushogskolanDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ActiveCourse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="Int32" Nullable="false" />
+    <Property Name="TeacherID" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CourseEnded" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Course" Relationship="Self.FK_ActiveCourse_Course_ID" FromRole="ActiveCourse" ToRole="Course" />
+    <NavigationProperty Name="Teacher" Relationship="Self.FK_ActiveCourse_Teacher_ID" FromRole="ActiveCourse" ToRole="Teacher" />
+    <NavigationProperty Name="CourseStudents" Relationship="Self.FK_CourseStudent_ActiveCourse_ID" FromRole="ActiveCourse" ToRole="CourseStudent" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Points" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Info" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ActiveCourse" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ActiveCourses" Relationship="Self.FK_ActiveCourse_Course_ID" FromRole="Course" ToRole="ActiveCourse" />
+  </EntityType>
+  <EntityType Name="CourseStudent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActiveCourseID" Type="Int32" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="GradeID" Type="Int32" />
+    <NavigationProperty Name="ActiveCourse" Relationship="Self.FK_CourseStudent_ActiveCourse_ID" FromRole="CourseStudent" ToRole="ActiveCourse" />
+    <NavigationProperty Name="Grade" Relationship="Self.FK_CourseStudent_Grades_ID" FromRole="CourseStudent" ToRole="Grades" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_CourseStudent_Student_ID" FromRole="CourseStudent" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Grade">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CourseStudents" Relationship="Self.FK_CourseStudent_Grades_ID" FromRole="Grades" ToRole="CourseStudent" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ActiveStudent" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CourseStudents" Relationship="Self.FK_CourseStudent_Student_ID" FromRole="Student" ToRole="CourseStudent" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ActiveTeacher" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ActiveCourses" Relationship="Self.FK_ActiveCourse_Teacher_ID" FromRole="Teacher" ToRole="ActiveCourse" />
+  </EntityType>
+  <Association Name="FK_ActiveCourse_Course_ID">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="ActiveCourse" Type="Self.ActiveCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActiveCourse">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActiveCourse_Teacher_ID">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="ActiveCourse" Type="Self.ActiveCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActiveCourse">
+        <PropertyRef Name="TeacherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseStudent_ActiveCourse_ID">
+    <End Role="ActiveCourse" Type="Self.ActiveCourse" Multiplicity="1" />
+    <End Role="CourseStudent" Type="Self.CourseStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActiveCourse">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CourseStudent">
+        <PropertyRef Name="ActiveCourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseStudent_Grades_ID">
+    <End Role="Grades" Type="Self.Grade" Multiplicity="0..1" />
+    <End Role="CourseStudent" Type="Self.CourseStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grades">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CourseStudent">
+        <PropertyRef Name="GradeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseStudent_Student_ID">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="CourseStudent" Type="Self.CourseStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CourseStudent">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MinushogskolanDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ActiveCourses" EntityType="Self.ActiveCourse" />
+    <EntitySet Name="Courses" EntityType="Self.Course" />
+    <EntitySet Name="CourseStudents" EntityType="Self.CourseStudent" />
+    <EntitySet Name="Grades" EntityType="Self.Grade" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <EntitySet Name="Teachers" EntityType="Self.Teacher" />
+    <AssociationSet Name="FK_ActiveCourse_Course_ID" Association="Self.FK_ActiveCourse_Course_ID">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="ActiveCourse" EntitySet="ActiveCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActiveCourse_Teacher_ID" Association="Self.FK_ActiveCourse_Teacher_ID">
+      <End Role="Teacher" EntitySet="Teachers" />
+      <End Role="ActiveCourse" EntitySet="ActiveCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseStudent_ActiveCourse_ID" Association="Self.FK_CourseStudent_ActiveCourse_ID">
+      <End Role="ActiveCourse" EntitySet="ActiveCourses" />
+      <End Role="CourseStudent" EntitySet="CourseStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseStudent_Grades_ID" Association="Self.FK_CourseStudent_Grades_ID">
+      <End Role="Grades" EntitySet="Grades" />
+      <End Role="CourseStudent" EntitySet="CourseStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseStudent_Student_ID" Association="Self.FK_CourseStudent_Student_ID">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="CourseStudent" EntitySet="CourseStudents" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

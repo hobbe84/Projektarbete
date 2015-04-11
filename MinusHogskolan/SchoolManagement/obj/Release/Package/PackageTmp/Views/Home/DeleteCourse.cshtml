@@ -1,0 +1,54 @@
+﻿@model SchoolManagement.Models.Courses
+
+@{
+    ViewBag.Title = "Ta bort kurs";
+}
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <h2 class="text-danger">Vill du avaktivera kursen?</h2>
+                <div>
+                    <hr style="margin-bottom:20px;" />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Info)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Info)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Points)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Points)
+                        </dd>
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary()
+                        <div class="form-actions no-color" style="margin-top:50px;">
+                            <input type="submit" value="Avaktivera"  class="btn btn-danger" />
+                            @Html.ActionLink("Tillbaka till Listan", "GetAllCourses", "Home", null, new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
