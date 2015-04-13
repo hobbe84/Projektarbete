@@ -19,7 +19,6 @@ namespace SchoolManagement.Controllers
             return View();
         }
 
-
         // GET: Alla kurser
         [HttpGet]
         public ActionResult GetAllCourses()
@@ -53,7 +52,6 @@ namespace SchoolManagement.Controllers
         {
             return View();
         }
-
 
         //POST: Skapa kursen
         [HttpPost]
@@ -127,8 +125,7 @@ namespace SchoolManagement.Controllers
 
             // Returnera vyn med kursen.
             return View(courseToEdit);
-        }
- 
+        } 
 
         // POST: Uppdatera kursen
         [HttpPost]
@@ -170,7 +167,6 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllCourses");
         }
 
-
         // GET: Avregistrera en kurs
         [HttpGet]
         public ActionResult DeleteCourse(int? id)
@@ -209,7 +205,6 @@ namespace SchoolManagement.Controllers
             return View(course);
         }
 
-
         // POST: Avregistrera kursen
         [HttpPost]
         [ActionName("DeleteCourse")]
@@ -241,7 +236,6 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllCourses");
         }
 
-
         // GET: Alla studenter
         [HttpGet]
         public ActionResult GetAllStudents()
@@ -271,14 +265,12 @@ namespace SchoolManagement.Controllers
             return View(AllStudents);
         }
 
-
         // GET: Skapa ny student
         [HttpGet]
         public ActionResult AddStudent()
         {
             return View();
         }
-
 
         //POST: Skapa studenten
         [HttpPost]
@@ -323,7 +315,6 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllStudents");
         }
 
-
         // GET: Uppdatera en student
         [HttpGet]
         public ActionResult EditStudent(int? id)
@@ -361,7 +352,6 @@ namespace SchoolManagement.Controllers
             // Returnera vyn med Studenter.
             return View(studentToEdit);
         }
-
 
         // POST: Uppdatera student
         [HttpPost]
@@ -405,7 +395,6 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllStudents");
         }
 
-
         // GET: Avregistrera en student
         [HttpGet]
         public ActionResult DeleteStudent(int? id)
@@ -446,7 +435,6 @@ namespace SchoolManagement.Controllers
             return View(student);
         }
 
-
         // POST: Avregistrera studenten
         [HttpPost]
         [ActionName("DeleteStudent")]
@@ -476,7 +464,6 @@ namespace SchoolManagement.Controllers
             // Gå tillbaka till llistan med studenter.
             return RedirectToAction("GetAllStudents");
         }
-
 
         // GET: Alla lärare
         [HttpGet]
@@ -512,7 +499,6 @@ namespace SchoolManagement.Controllers
         {
             return View();
         }
-
 
         //POST: Skapa läraren
         [HttpPost]
@@ -556,7 +542,6 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllTeachers");
         }
 
-
         // GET: Uppdatera en lärare
         [HttpGet]
         public ActionResult EditTeacher(int? id)
@@ -593,7 +578,6 @@ namespace SchoolManagement.Controllers
             // Returnera vyn med lärare.
             return View(teacherToEdit);
         }
-
 
         // POST: Uppdatera lärare
         [HttpPost]
@@ -637,7 +621,6 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllTeachers");
         }
 
-
         // GET: Avregistrera en lärare
         [HttpGet]
         public ActionResult DeleteTeacher(int? id)
@@ -677,7 +660,6 @@ namespace SchoolManagement.Controllers
             // Returnera vyn med läraren.
             return View(teacher);
         }
-
 
         // POST: Avregistrera läraren
         [HttpPost]
