@@ -1,0 +1,87 @@
+﻿@font-face {
+    font-family: 'Play';
+    src: local('Play'), url(http://fonts.gstatic.com/s/play/v6/-SXnV4mZjf4oh1IBw13WZw.woff) format('woff');
+} 
+.jumbotron{
+    background-color: #004;
+    margin-bottom:0px; 
+    padding:10px; 
+    z-index:2000; 
+    position:fixed; 
+    width:100%;
+}
+.toast-top-left{
+    top:100px;left:50px
+
+}
+.toast-top-right{
+    top:100px;right:50px
+}
+.header-style {
+    color:#eee;
+}
+div.button-margin {
+    margin-bottom:20px;
+}
+.modal-footer{
+    margin-right:50px; 
+    margin-top:125px;
+}
+@media print
+{
+    #page-content-wrapper {
+        margin-left: -200px;
+        font-size: 12px;
+    }
+    #printhide {
+        display: none;
+    }
+    .header-style {
+        font-size: 20px;
+        text-align: center;
+    }
+    #sidebar-wrapper {
+        display:none;
+    }
+    .btn {
+        display: none;
+    }
+    .glyphicon {
+        display: none;
+    }
+    a {
+        display:none;
+    }
+    .modal-footer {
+        display:none;
+    }
+    body { 
+        font-family: Georgia, Times, serif; 
+        font-size: 10pt;
+        text-align: left; 
+    }
+    *{
+     color:#000!important;
+     background-color: #fff!important;
+     text-shadow:none!important;
+     background:transparent!important;
+     box-shadow:none!important;  
+        
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Play);
+
