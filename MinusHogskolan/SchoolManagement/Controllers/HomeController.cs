@@ -182,7 +182,8 @@ namespace SchoolManagement.Controllers
             }
 
             // Deklarera variabel.
-            Courses course;
+            //Courses course;
+            CourseViewModel course;
 
             // Skapa en koppling till databasen.
             using (var ctx = new MinushogskolanDbEntities())
@@ -190,7 +191,7 @@ namespace SchoolManagement.Controllers
                 // Ta fram kursen med det medskickade id:t för att visa vilken kurs som ska avregistreras.
                 course = ctx.Courses
                     .Where(x => x.ID == id)
-                    .Select(x => new Courses
+                    .Select(x => new CourseViewModel
                     {
                         Name = x.Name,
                         Info = x.Info,
@@ -342,6 +343,7 @@ namespace SchoolManagement.Controllers
                     .Where(x => x.ID == id)
                     .Select(x => new StudentViewModel
                     {
+                        ID = x.ID,
                         FirstName = x.FirstName,
                         LastName = x.LastName,
                         BirthDate = x.BirthDate,
@@ -364,7 +366,7 @@ namespace SchoolManagement.Controllers
         // POST: Uppdatera student
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditStudent(StudentViewModel studentToEdit)
+        public ActionResult EditStudent([Bind(Include = "ID, FirstName, LastName, BirthDate, Address, City")]StudentViewModel studentToEdit)
         {
             try
             {
@@ -415,7 +417,8 @@ namespace SchoolManagement.Controllers
             }
 
             // Deklarera variabel.
-            Students student;
+            //Students student;
+            StudentViewModel student;
 
             // Skapa en koppling till databasen.
             using (var ctx = new MinushogskolanDbEntities())
@@ -423,7 +426,7 @@ namespace SchoolManagement.Controllers
                 // Ta fram studenten med det medskickade id:t för att visa vilken student som ska avregistreras.
                 student = ctx.Students
                     .Where(x => x.ID == id)
-                    .Select(x => new Students
+                    .Select(x => new StudentViewModel
                     {
                         FirstName = x.FirstName,
                         LastName = x.LastName,
@@ -480,7 +483,7 @@ namespace SchoolManagement.Controllers
         public ActionResult GetAllTeachers()
         {
             // Deklarera en lista med lärar-objekt.
-            List<Teachers> AllTeachers;
+            List<TeacherViewModel> AllTeachers;
 
             // Skapa en koppling till databasen.
             using (var ctx = new MinushogskolanDbEntities())
@@ -488,7 +491,7 @@ namespace SchoolManagement.Controllers
                 // Ta fram alla lärare ur tabellen Teachers som inte är avregistrerade och sortera på för- och efternamn.
                 AllTeachers = ctx.Teachers
                     .Where(x => x.ActiveTeacher == true)
-                    .Select(x => new Teachers
+                    .Select(x => new TeacherViewModel
                     {
                         ID = x.ID,
                         FirstName = x.FirstName,
@@ -564,13 +567,15 @@ namespace SchoolManagement.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var teacherToEdit = new Teachers();
+            TeacherViewModel teacherToEdit;
+
             using (var ctx = new MinushogskolanDbEntities())
             {
                 teacherToEdit = ctx.Teachers
                     .Where(x => x.ID == id)
-                    .Select(x => new Teachers
+                    .Select(x => new TeacherViewModel
                     {
+                        ID = x.ID,
                         FirstName = x.FirstName,
                         LastName = x.LastName,
                         BirthDate = x.BirthDate,
@@ -593,7 +598,7 @@ namespace SchoolManagement.Controllers
         // POST: Uppdatera lärare
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditTeacher(Teachers teacher)
+        public ActionResult EditTeacher([Bind(Include = "FirstName, LastName, BirthDate, Address, City")]TeacherViewModel teacher)
         {
             try
             {
@@ -644,7 +649,8 @@ namespace SchoolManagement.Controllers
             }
 
             // Deklarera variabel.
-            Teachers teacher;
+            //Teachers teacher;
+            TeacherViewModel teacher;
 
             // Skapa en koppling till databasen.
             using(var ctx = new MinushogskolanDbEntities())
@@ -652,7 +658,7 @@ namespace SchoolManagement.Controllers
                 // Ta fram läraren med det medskickade id:t för att visa vilken lärare som ska avregistreras.
                 teacher = ctx.Teachers
                     .Where(x => x.ID == id)
-                    .Select(x => new Teachers
+                    .Select(x => new TeacherViewModel
                     {
                         FirstName = x.FirstName,
                         LastName = x.LastName,

@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="MinushogskolanDbModel.ActiveCourse" Width="1.5" PointX="4.5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MinushogskolanDbModel.Course" Width="1.5" PointX="1.125" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MinushogskolanDbModel.CourseStudent" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MinushogskolanDbModel.Grade" Width="1.5" PointX="11.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinushogskolanDbModel.Grade" Width="1.5" PointX="11.125" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MinushogskolanDbModel.Student" Width="1.5" PointX="7.75" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MinushogskolanDbModel.Teacher" Width="1.5" PointX="4.5" PointY="4.25" IsExpanded="true" />
         <AssociationConnector Association="MinushogskolanDbModel.FK_ActiveCourse_Course_ID" ManuallyRouted="false" />
