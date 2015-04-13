@@ -36,5 +36,18 @@ C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.Dat
 C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.xml
 C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.dll
 C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.pdb
+=======
+C:\Code\SN14\GruppArbete\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.dll.config
+C:\Code\SN14\GruppArbete\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.dll
+C:\Code\SN14\GruppArbete\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.pdb
+C:\Code\SN14\GruppArbete\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.dll
+C:\Code\SN14\GruppArbete\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Code\SN14\GruppArbete\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.xml
+C:\Code\SN14\GruppArbete\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Code\SN14\GruppArbete\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.csprojResolveAssemblyReference.cache
+C:\Code\SN14\GruppArbete\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.dll
+C:\Code\SN14\GruppArbete\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.pdb
+>>>>>>> 4fed528872cfa78f1c5d20b5069b5f1c7e09ff69

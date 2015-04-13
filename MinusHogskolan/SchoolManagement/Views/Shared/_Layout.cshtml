@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - MinusHögskolan</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/style.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-2.1.3.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/toastr.js"></script>
@@ -25,10 +26,10 @@
 <body>
 
     <header>
-        <div class="jumbotron" style="margin-bottom:0px; padding:10px; z-index:2000; position:fixed; width:100%;">
+        <div class="jumbotron">
             <div class="col-md-offset-4">
                 @*<img src="~/Pictures/logotype_minushogskolan.png" />*@
-                <h2 style="color:#eee;">MinusHögskolan - Vi lär dig lite mindre än andra!</h2>
+                <h2 class="header-style">MinusHögskolan - Vi lär dig lite mindre än andra!</h2>
             </div>
         </div>
     </header>
@@ -59,8 +60,13 @@
             <div style="margin-top:-20px">
                 @RenderBody()
             </div>
+<<<<<<< HEAD
             <div class="modal-footer" style="margin-right:50px; margin-top:125px;">
                 <p>&copy; @DateTime.Now.Year - MinusHögskolan / <small>Code and Design by GruppTre</small></p>
+=======
+            <div class="modal-footer">
+                <p>&copy; @DateTime.Now.Year - MinusHögskolan / <small>Code and Design by GruppTre</small> </p>
+>>>>>>> 4fed528872cfa78f1c5d20b5069b5f1c7e09ff69
             </div>
         </div>
         <!-- /#page-content-wrapper -->
