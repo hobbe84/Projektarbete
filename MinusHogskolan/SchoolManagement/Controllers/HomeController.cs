@@ -702,5 +702,74 @@ namespace SchoolManagement.Controllers
             // Gå tillbaka till listan med lärare.
             return RedirectToAction("GetAllTeachers");
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CourseSearch(string search)
+        {
+            if (!string.IsNullOrEmpty(search))
+            {
+                IList<CourseViewModel> cvm;
+                using (var ctx = new MinushogskolanDbEntities())
+                {
+
+                    cvm = (from c in ctx.Courses
+                           where c.Name.Contains(search)
+                           select new CourseViewModel { Name = c.Name, Info = c.Info, Points = c.Points }).ToList();
+                        
+                                  
+
+                    ViewBag.VisaKnapp = true;
+                    return View("GetAllCourses", cvm);
+                }
+            }
+            return View("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult StudentSearch(string search)
+        {
+            if (!string.IsNullOrEmpty(search))
+            {
+                IList<StudentViewModel> svm;
+                using (var ctx = new MinushogskolanDbEntities())
+                {
+
+                    svm = (from s in ctx.Students
+                           where s.FirstName.Contains(search) || s.LastName.Contains(search)
+                           select new StudentViewModel { FirstName = s.FirstName, LastName = s.LastName, Address = s.Adress, BirthDate = s.BirthDate, City = s.City }).ToList();
+
+
+
+                    ViewBag.VisaKnapp = true;
+                    return View("GetAllStudents", svm);
+                }
+            }
+            return View("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult TeacherSearch(string search)
+        {
+            if (!string.IsNullOrEmpty(search))
+            {
+                IList<TeacherViewModel> tvm;
+                using (var ctx = new MinushogskolanDbEntities())
+                {
+
+                    tvm = (from t in ctx.Teachers
+                           where t.FirstName.Contains(search) || t.LastName.Contains(search)
+                           select new TeacherViewModel { FirstName = t.FirstName, LastName = t.LastName, Address = t.Adress, BirthDate = t.BirthDate, City = t.City }).ToList();
+
+
+
+                    ViewBag.VisaKnapp = true;
+                    return View("GetAllTeachers", tvm);
+                }
+            }
+            return View("Index");
+        }
     }
 }
