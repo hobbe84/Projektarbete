@@ -19,6 +19,7 @@ namespace SchoolManagement.Controllers
             return View();
         }
 
+
         // GET: Alla kurser
         [HttpGet]
         public ActionResult GetAllCourses()
@@ -52,6 +53,7 @@ namespace SchoolManagement.Controllers
         {
             return View();
         }
+
 
         //POST: Skapa kursen
         [HttpPost]
@@ -125,7 +127,8 @@ namespace SchoolManagement.Controllers
 
             // Returnera vyn med kursen.
             return View(courseToEdit);
-        } 
+        }
+ 
 
         // POST: Uppdatera kursen
         [HttpPost]
@@ -167,6 +170,7 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllCourses");
         }
 
+
         // GET: Avregistrera en kurs
         [HttpGet]
         public ActionResult DeleteCourse(int? id)
@@ -178,7 +182,6 @@ namespace SchoolManagement.Controllers
             }
 
             // Deklarera variabel.
-            //Courses course;
             CourseViewModel course;
 
             // Skapa en koppling till databasen.
@@ -204,6 +207,7 @@ namespace SchoolManagement.Controllers
             // Returnera vyn med kursen.
             return View(course);
         }
+
 
         // POST: Avregistrera kursen
         [HttpPost]
@@ -236,6 +240,7 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllCourses");
         }
 
+
         // GET: Alla studenter
         [HttpGet]
         public ActionResult GetAllStudents()
@@ -265,12 +270,14 @@ namespace SchoolManagement.Controllers
             return View(AllStudents);
         }
 
+
         // GET: Skapa ny student
         [HttpGet]
         public ActionResult AddStudent()
         {
             return View();
         }
+
 
         //POST: Skapa studenten
         [HttpPost]
@@ -315,6 +322,7 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllStudents");
         }
 
+
         // GET: Uppdatera en student
         [HttpGet]
         public ActionResult EditStudent(int? id)
@@ -352,6 +360,7 @@ namespace SchoolManagement.Controllers
             // Returnera vyn med Studenter.
             return View(studentToEdit);
         }
+
 
         // POST: Uppdatera student
         [HttpPost]
@@ -395,6 +404,7 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllStudents");
         }
 
+
         // GET: Avregistrera en student
         [HttpGet]
         public ActionResult DeleteStudent(int? id)
@@ -406,7 +416,6 @@ namespace SchoolManagement.Controllers
             }
 
             // Deklarera variabel.
-            //Students student;
             StudentViewModel student;
 
             // Skapa en koppling till databasen.
@@ -434,6 +443,7 @@ namespace SchoolManagement.Controllers
             // Returnera vyn med studenten.
             return View(student);
         }
+
 
         // POST: Avregistrera studenten
         [HttpPost]
@@ -464,6 +474,7 @@ namespace SchoolManagement.Controllers
             // Gå tillbaka till llistan med studenter.
             return RedirectToAction("GetAllStudents");
         }
+
 
         // GET: Alla lärare
         [HttpGet]
@@ -499,6 +510,7 @@ namespace SchoolManagement.Controllers
         {
             return View();
         }
+
 
         //POST: Skapa läraren
         [HttpPost]
@@ -542,6 +554,7 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllTeachers");
         }
 
+
         // GET: Uppdatera en lärare
         [HttpGet]
         public ActionResult EditTeacher(int? id)
@@ -578,6 +591,7 @@ namespace SchoolManagement.Controllers
             // Returnera vyn med lärare.
             return View(teacherToEdit);
         }
+
 
         // POST: Uppdatera lärare
         [HttpPost]
@@ -621,6 +635,7 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllTeachers");
         }
 
+
         // GET: Avregistrera en lärare
         [HttpGet]
         public ActionResult DeleteTeacher(int? id)
@@ -632,7 +647,6 @@ namespace SchoolManagement.Controllers
             }
 
             // Deklarera variabel.
-            //Teachers teacher;
             TeacherViewModel teacher;
 
             // Skapa en koppling till databasen.
@@ -660,6 +674,7 @@ namespace SchoolManagement.Controllers
             // Returnera vyn med läraren.
             return View(teacher);
         }
+
 
         // POST: Avregistrera läraren
         [HttpPost]
@@ -705,8 +720,6 @@ namespace SchoolManagement.Controllers
                            where c.Name.Contains(search)
                            select new CourseViewModel { Name = c.Name, Info = c.Info, Points = c.Points }).ToList();
                         
-                                  
-
                     ViewBag.VisaKnapp = true;
                     return View("GetAllCourses", cvm);
                 }
@@ -728,8 +741,6 @@ namespace SchoolManagement.Controllers
                            where s.FirstName.Contains(search) || s.LastName.Contains(search)
                            select new StudentViewModel { FirstName = s.FirstName, LastName = s.LastName, Address = s.Adress, BirthDate = s.BirthDate, City = s.City }).ToList();
 
-
-
                     ViewBag.VisaKnapp = true;
                     return View("GetAllStudents", svm);
                 }
@@ -750,8 +761,6 @@ namespace SchoolManagement.Controllers
                     tvm = (from t in ctx.Teachers
                            where t.FirstName.Contains(search) || t.LastName.Contains(search)
                            select new TeacherViewModel { FirstName = t.FirstName, LastName = t.LastName, Address = t.Adress, BirthDate = t.BirthDate, City = t.City }).ToList();
-
-
 
                     ViewBag.VisaKnapp = true;
                     return View("GetAllTeachers", tvm);

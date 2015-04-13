@@ -21,7 +21,8 @@ namespace SchoolManagement.ViewModels
         [DisplayName("Efternamn")]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Födelsedatum måste anges")]
+        [Required(ErrorMessage = "Födelsedatum får inte vara tomt")]
+        [DataType(DataType.Date, ErrorMessage = "Födelsedatum måste anges")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         [DisplayName("Födelsedatum")]
         public DateTime BirthDate { get; set; }
