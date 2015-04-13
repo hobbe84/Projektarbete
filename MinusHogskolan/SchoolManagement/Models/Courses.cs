@@ -10,13 +10,13 @@ namespace SchoolManagement.Models
     {
         public int ID { get; set; } 
 
-        [DisplayName("Namn")]
+        //[DisplayName("Namn")]
         public string Name { get; set; }
 
-        [DisplayName("Beskrivning")]
+        //[DisplayName("Beskrivning")]
         public string Info { get; set; }
 
-        [DisplayName("YH Poäng")]
+        //[DisplayName("YH Poäng")]
         public int Points { get; set; }
 
         public bool ActiveCourse { get; set; }

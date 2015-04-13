@@ -27,3 +27,13 @@ C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\Entit
 C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.csprojResolveAssemblyReference.cache
 C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.dll
 C:\Code\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.pdb
+C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.dll.config
+C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.dll
+C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\SchoolManagement.DataAccess.pdb
+C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.dll
+C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.pdb

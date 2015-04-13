@@ -19,12 +19,13 @@ namespace SchoolManagement.Controllers
             return View();
         }
 
+
         // GET: Alla kurser
         [HttpGet]
         public ActionResult GetAllCourses()
         {
-            // Deklarera en lista med kurs-objekt.
-            List<Courses> AllCourses;
+            // Deklarera en lista med kurser.
+            List<CourseViewModel> AllCourses;
 
             // Skapa koppling till databasen.
             using (var ctx = new MinushogskolanDbEntities())
@@ -32,7 +33,7 @@ namespace SchoolManagement.Controllers
                 // Ta fram alla kurser ur tabellen Courses som inte är avregistrerade och sortera på namn.
                 AllCourses = ctx.Courses
                     .Where(x => x.ActiveCourse == true)
-                    .Select(x => new Courses
+                    .Select(x => new CourseViewModel
                     {
                         ID = x.ID,
                         Name = x.Name,
@@ -53,6 +54,7 @@ namespace SchoolManagement.Controllers
             return View();
         }
 
+
         //POST: Skapa kursen
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -62,7 +64,8 @@ namespace SchoolManagement.Controllers
             if (ModelState.IsValid)
             {
                 try
-                {                   
+                {
+                    // Skapa en koppling till databasen.
                     using (var ctx = new MinushogskolanDbEntities())
                     {
                         var course = new Course                        
@@ -101,13 +104,14 @@ namespace SchoolManagement.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            var courseToEdit = new Courses();
+           
+            CourseViewModel courseToEdit;
+            // Skapa en koppling till databasen.
             using (var ctx = new MinushogskolanDbEntities())
             {
                 courseToEdit = ctx.Courses
                     .Where(x => x.ID == id)
-                    .Select(x => new Courses
+                    .Select(x => new CourseViewModel
                     {
                         Name = x.Name,
                         Info = x.Info,
@@ -125,27 +129,28 @@ namespace SchoolManagement.Controllers
             return View(courseToEdit);
         }
  
+
         // POST: Uppdatera kursen
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditCourse(Courses course)
+        public ActionResult EditCourse(CourseViewModel courseToEdit)
         {
             try
             {
-                //CourseViewModel courseToEdit;
+                // Skapa en koppling till databasen.
                 using (var ctx = new MinushogskolanDbEntities())
                 {
                     // Ta fram kursen från databasen som motsvarar id:t på kursen som ska uppdateras.
-                    var courseToEdit = ctx.Courses
-                        .Where(x => x.ID == course.ID)
+                    var changedCourse = ctx.Courses
+                        .Where(x => x.ID == courseToEdit.ID)
                         .FirstOrDefault();
 
-                    // Om kursen fanns, uppdatera fälten i formuläret med det nya inmatade parametrarna.
+                    // Om kursen fanns, uppdatera fälten i formuläret med de nya inmatade parametrarna.
                     if (courseToEdit != null)
                     {
-                        courseToEdit.Name = course.Name;
-                        courseToEdit.Info = course.Info;
-                        courseToEdit.Points = course.Points;
+                        changedCourse.Name = courseToEdit.Name;
+                        changedCourse.Info = courseToEdit.Info;
+                        changedCourse.Points = courseToEdit.Points;
                     }
 
                     // Spara ändringarna.
@@ -166,12 +171,82 @@ namespace SchoolManagement.Controllers
         }
 
 
+        // GET: Avregistrera en kurs
+        [HttpGet]
+        public ActionResult DeleteCourse(int? id)
+        {
+            // Om id är tom/null så finns inte kursen.
+            if (!id.HasValue)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            // Deklarera variabel.
+            Courses course;
+
+            // Skapa en koppling till databasen.
+            using (var ctx = new MinushogskolanDbEntities())
+            {
+                // Ta fram kursen med det medskickade id:t för att visa vilken kurs som ska avregistreras.
+                course = ctx.Courses
+                    .Where(x => x.ID == id)
+                    .Select(x => new Courses
+                    {
+                        Name = x.Name,
+                        Info = x.Info,
+                        Points = x.Points
+                    }).FirstOrDefault();
+            }
+
+            // Kursen hittades inte.
+            if (course == null)
+            {
+                return HttpNotFound();
+            }
+
+            // Returnera vyn med kursen.
+            return View(course);
+        }
+
+
+        // POST: Avregistrera kursen
+        [HttpPost]
+        [ActionName("DeleteCourse")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteCourse(int id)
+        {
+            // Kolla om kommandona till databasen går rätt till annars felhantera.
+            try
+            {
+                // Skapa en koppling till databasen.
+                using (var ctx = new MinushogskolanDbEntities())
+                {
+                    // Ta fram kursen som ska avregistreras, sätt den som ej aktiv kurs samt spara ändringen i databasen.
+                    var query = ctx.Courses
+                        .FirstOrDefault(c => c.ID == id);
+
+                    query.ActiveCourse = false;
+                    ctx.SaveChanges();
+                }
+                TempData["success"] = string.Format("Kursen har avregistrerats");
+            }
+            catch
+            {
+                TempData["error"] = "Misslyckades att avregistrera kursen. Försök igen!";
+                return RedirectToAction("DeleteCourse", new { id = id });
+            }
+
+            // Gå tillbaka till listan med kurser.
+            return RedirectToAction("GetAllCourses");
+        }
+
+
         // GET: Alla studenter
         [HttpGet]
         public ActionResult GetAllStudents()
         {
             // Deklarera en lista med student-objekt.
-            List<Students> AllStudents;
+            List<StudentViewModel> AllStudents;
 
             // Skapa en koppling till databasen.
             using (var ctx = new MinushogskolanDbEntities())
@@ -179,7 +254,7 @@ namespace SchoolManagement.Controllers
                 // Ta fram alla studenter ur tabellen Students som inte är avregistrerade och sortera på för- och efternamn.
                 AllStudents = ctx.Students
                     .Where(x => x.ActiveStudent == true)
-                    .Select(x => new Students
+                    .Select(x => new StudentViewModel
                     {
                         ID = x.ID,
                         FirstName = x.FirstName,
@@ -194,12 +269,15 @@ namespace SchoolManagement.Controllers
             // Returnera vyn med alla studenter.
             return View(AllStudents);
         }
+
+
         // GET: Skapa ny student
         [HttpGet]
         public ActionResult AddStudent()
         {
             return View();
         }
+
 
         //POST: Skapa studenten
         [HttpPost]
@@ -211,6 +289,7 @@ namespace SchoolManagement.Controllers
             {
                 try
                 {
+                    // Skapa en koppling till databasen.
                     using (var ctx = new MinushogskolanDbEntities())
                     {
                         var student = new Student
@@ -243,6 +322,7 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllStudents");
         }
 
+
         // GET: Uppdatera en student
         [HttpGet]
         public ActionResult EditStudent(int? id)
@@ -253,12 +333,14 @@ namespace SchoolManagement.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var studentToEdit = new Students();
+            StudentViewModel studentToEdit;
+
+            // Skapa en koppling till databasen.
             using (var ctx = new MinushogskolanDbEntities())
             {
                 studentToEdit = ctx.Students
                     .Where(x => x.ID == id)
-                    .Select(x => new Students
+                    .Select(x => new StudentViewModel
                     {
                         FirstName = x.FirstName,
                         LastName = x.LastName,
@@ -278,29 +360,30 @@ namespace SchoolManagement.Controllers
             return View(studentToEdit);
         }
 
+
         // POST: Uppdatera student
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditStudent(Students student)
+        public ActionResult EditStudent(StudentViewModel studentToEdit)
         {
             try
             {
-                
+                // Skapa en koppling till databasen.
                 using (var ctx = new MinushogskolanDbEntities())
                 {
                     // Ta fram studenten från databasen som motsvarar id:t på student som ska uppdateras.
-                    var studentToEdit = ctx.Students
-                        .Where(x => x.ID == student.ID)
+                    var changedStudent = ctx.Students
+                        .Where(x => x.ID == studentToEdit.ID)
                         .FirstOrDefault();
 
                     // Om studenten fanns, uppdatera fälten i formuläret med det nya inmatade parametrarna.
                     if (studentToEdit != null)
                     {
-                        studentToEdit.FirstName = student.FirstName;
-                        studentToEdit.LastName = student.LastName;
-                        studentToEdit.BirthDate = student.BirthDate;
-                        studentToEdit.Adress = student.Address;
-                        studentToEdit.City = student.City;
+                        changedStudent.FirstName = studentToEdit.FirstName;
+                        changedStudent.LastName = studentToEdit.LastName;
+                        changedStudent.BirthDate = studentToEdit.BirthDate;
+                        changedStudent.Adress = studentToEdit.Address;
+                        changedStudent.City = studentToEdit.City;
                     }
 
                     // Spara ändringarna.
@@ -320,6 +403,78 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllStudents");
         }
 
+
+        // GET: Avregistrera en student
+        [HttpGet]
+        public ActionResult DeleteStudent(int? id)
+        {
+            // Om id är tom/null så hanteras felet.
+            if (!id.HasValue)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            // Deklarera variabel.
+            Students student;
+
+            // Skapa en koppling till databasen.
+            using (var ctx = new MinushogskolanDbEntities())
+            {
+                // Ta fram studenten med det medskickade id:t för att visa vilken student som ska avregistreras.
+                student = ctx.Students
+                    .Where(x => x.ID == id)
+                    .Select(x => new Students
+                    {
+                        FirstName = x.FirstName,
+                        LastName = x.LastName,
+                        BirthDate = x.BirthDate,
+                        Address = x.Adress,
+                        City = x.City
+                    }).FirstOrDefault();
+            }
+
+            // Studenten hittades inte.
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+
+            // Returnera vyn med studenten.
+            return View(student);
+        }
+
+
+        // POST: Avregistrera studenten
+        [HttpPost]
+        [ActionName("DeleteStudent")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteStudent(int id)
+        {
+            try
+            {
+                // Skapa en koppling till databasen.
+                using (var ctx = new MinushogskolanDbEntities())
+                {
+                    // Ta fram studenten som ska avregistreras, sätt den som ej aktiv student samt spara ändringen i databasen.
+                    var query = ctx.Students
+                        .FirstOrDefault(u => u.ID == id);
+
+                    query.ActiveStudent = false;
+                    ctx.SaveChanges();
+                }
+                TempData["success"] = string.Format("Studenten är avregistrerad");
+            }
+            catch
+            {
+                TempData["error"] = "Misslyckades att avregistrera studenten. Försök igen!";
+                return RedirectToAction("DeleteStudent", new { id = id });
+            }
+
+            // Gå tillbaka till llistan med studenter.
+            return RedirectToAction("GetAllStudents");
+        }
+
+
         // GET: Alla lärare
         [HttpGet]
         public ActionResult GetAllTeachers()
@@ -327,6 +482,7 @@ namespace SchoolManagement.Controllers
             // Deklarera en lista med lärar-objekt.
             List<Teachers> AllTeachers;
 
+            // Skapa en koppling till databasen.
             using (var ctx = new MinushogskolanDbEntities())
             {
                 // Ta fram alla lärare ur tabellen Teachers som inte är avregistrerade och sortera på för- och efternamn.
@@ -354,6 +510,7 @@ namespace SchoolManagement.Controllers
             return View();
         }
 
+
         //POST: Skapa läraren
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -364,6 +521,7 @@ namespace SchoolManagement.Controllers
             {
                 try
                 {
+                    // Skapa en koppling till databasen.
                     using (var ctx = new MinushogskolanDbEntities())
                     {
                         var teacher = new Teacher
@@ -373,7 +531,6 @@ namespace SchoolManagement.Controllers
                             BirthDate = addTeacher.BirthDate,
                             Adress = addTeacher.Address,
                             City = addTeacher.City
-
                         };
 
                         // Sätt student som aktiv för att kunna visa den i lista med lärare.
@@ -395,6 +552,7 @@ namespace SchoolManagement.Controllers
             // Gå tillbaka till listan med lärare.
             return RedirectToAction("GetAllTeachers");
         }
+
 
         // GET: Uppdatera en lärare
         [HttpGet]
@@ -431,6 +589,7 @@ namespace SchoolManagement.Controllers
             return View(teacherToEdit);
         }
 
+
         // POST: Uppdatera lärare
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -438,7 +597,7 @@ namespace SchoolManagement.Controllers
         {
             try
             {
-
+                // Skapa en koppling till databasen.
                 using (var ctx = new MinushogskolanDbEntities())
                 {
                     // Ta fram läraren från databasen som motsvarar id:t på lärare som ska uppdateras.
@@ -473,166 +632,6 @@ namespace SchoolManagement.Controllers
             return RedirectToAction("GetAllTeachers");
         }
 
-        // GET: Avregistrera en kurs
-        [HttpGet]
-        public ActionResult DeleteCourse(int? id)
-        {
-            // Om id är tom/null så finns inte kursen.
-            if (!id.HasValue)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            // Deklarera variabel.
-            Courses course;
-
-            // Skapa en koppling till databasen.
-            using (var ctx = new MinushogskolanDbEntities())
-            {
-                //var query =
-                //    (from c in ctx.Courses
-                //     where c.ID == id
-                //     select new Courses
-                //     {
-                //         Name = c.Name,
-                //         Info = c.Info,
-                //         Points = c.Points
-                //     });
-                //course = query.FirstOrDefault();
-
-                // Ta fram kursen med det medskickade id:t för att visa vilken kurs som ska avregistreras.
-                course = ctx.Courses
-                    .Where(x => x.ID == id)
-                    .Select(x => new Courses
-                    {
-                        Name = x.Name,
-                        Info = x.Info,
-                        Points = x.Points
-                    }).FirstOrDefault();
-            }
-
-            // Kursen hittades inte.
-            if (course == null)
-            {
-                return HttpNotFound();
-            }
-
-            // Returnera vyn med kursen.
-            return View(course);
-        }
-
-        // POST: Avregistrera kursen
-        [HttpPost]
-        [ActionName("DeleteCourse")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteCourse(int id)
-        {
-            // Kolla om kommandona till databasen går rätt till annars felhantera.
-            try
-            {
-                // Skapa en koppling till databasen.
-                using (var ctx = new MinushogskolanDbEntities())
-                {
-                    // Ta fram kursen som ska avregistreras, sätt den som ej aktiv kurs samt spara ändringen i databasen.
-                    var query = ctx.Courses
-                        .FirstOrDefault(c => c.ID == id);
-
-                    query.ActiveCourse = false;
-                    ctx.SaveChanges();
-                }
-                TempData["success"] = string.Format("Kursen har avregistrerats");
-            }
-            catch
-            {
-                TempData["error"] = "Misslyckades att avregistrera kursen. Försök igen!";
-                return RedirectToAction("DeleteCourse", new { id = id });
-            }
-
-            // Gå tillbaka till listan med kurser.
-            return RedirectToAction("GetAllCourses");
-        }
-
-        // GET: Avregistrera en student
-        [HttpGet]
-        public ActionResult DeleteStudent(int? id)
-        {
-            // Om id är tom/null så hanteras felet.
-            if (!id.HasValue)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            // Deklarera variabel.
-            Students student;
-
-            // Skapa en koppling till databasen.
-            using (var ctx = new MinushogskolanDbEntities())
-            {
-              
-                //var query =
-                //    (from s in ctx.Students
-                //     where s.ID == id
-                //     select new Students
-                //     {
-                //         FirstName = s.FirstName,
-                //         LastName = s.LastName,
-                //         BirthDate = s.BirthDate,
-                //         Address = s.Adress,
-                //         City = s.City
-                //     });
-                //student = query.FirstOrDefault();
-
-                // Ta fram studenten med det medskickade id:t för att visa vilken student som ska avregistreras.
-                student = ctx.Students
-                    .Where(x => x.ID == id)
-                    .Select(x => new Students
-                    {
-                        FirstName = x.FirstName,
-                        LastName = x.LastName,
-                        BirthDate = x.BirthDate,
-                        Address = x.Adress,
-                        City = x.City
-                    }).FirstOrDefault();
-            }
-
-            // Studenten hittades inte.
-            if (student == null)
-            {
-                return HttpNotFound();
-            }
-
-            // Returnera vyn med studenten.
-            return View(student);
-        }
-
-        // POST: Avregistrera studenten
-        [HttpPost]
-        [ActionName("DeleteStudent")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteStudent(int id)
-        {
-            try
-            {
-                using (var ctx = new MinushogskolanDbEntities())
-                {
-                    // Ta fram studenten som ska avregistreras, sätt den som ej aktiv student samt spara ändringen i databasen.
-                    var query = ctx.Students
-                        .FirstOrDefault(u => u.ID == id);
-
-                    query.ActiveStudent = false;
-                    ctx.SaveChanges();
-                }
-                TempData["success"] = string.Format("Studenten är avregistrerad");
-            }
-            catch
-            {
-                TempData["error"] = "Misslyckades att avregistrera studenten. Försök igen!";
-                return RedirectToAction("DeleteStudent", new { id = id });
-            }
-
-            // Gå tillbaka till llistan med studenter.
-            return RedirectToAction("GetAllStudents");
-        }
 
         // GET: Avregistrera en lärare
         [HttpGet]
@@ -650,20 +649,6 @@ namespace SchoolManagement.Controllers
             // Skapa en koppling till databasen.
             using(var ctx = new MinushogskolanDbEntities())
             {
-                
-                //var query =
-                //    (from t in ctx.Teachers
-                //         where t.ID == id
-                //         select new Teachers
-                //         {
-                //             FirstName = t.FirstName,
-                //             LastName = t.LastName,
-                //             BirthDate = t.BirthDate,
-                //             Address = t.Adress,
-                //             City = t.City
-                //         });
-                //teacher = query.FirstOrDefault();
-
                 // Ta fram läraren med det medskickade id:t för att visa vilken lärare som ska avregistreras.
                 teacher = ctx.Teachers
                     .Where(x => x.ID == id)
@@ -686,6 +671,7 @@ namespace SchoolManagement.Controllers
             // Returnera vyn med läraren.
             return View(teacher);
         }
+
 
         // POST: Avregistrera läraren
         [HttpPost]
@@ -716,12 +702,5 @@ namespace SchoolManagement.Controllers
             // Gå tillbaka till listan med lärare.
             return RedirectToAction("GetAllTeachers");
         }
-
-
-
-
-
     }
-
-
 }
