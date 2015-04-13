@@ -37,3 +37,4 @@ C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskol
 C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.dll
 C:\Users\Lenovo\Downloads\Projektarbete-master\Projektarbete-master\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.pdb
+C:\Code\Webbutveckling Projekt\Projektarbete\MinusHogskolan\SchoolManagement.DataAccess\obj\Debug\SchoolManagement.DataAccess.csprojResolveAssemblyReference.cache
