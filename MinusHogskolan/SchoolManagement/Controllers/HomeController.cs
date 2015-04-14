@@ -18,7 +18,7 @@ namespace SchoolManagement.Controllers
         {
             return View();
         }
-
+        
 
         // GET: Alla kurser
         [HttpGet]
@@ -68,19 +68,19 @@ namespace SchoolManagement.Controllers
                     // Skapa en koppling till databasen.
                     using (var ctx = new MinushogskolanDbEntities())
                     {
-                        var course = new Course                        
+                        var course = new Course
                         {
                             Name = addCourse.Name,
                             Info = addCourse.Info,
                             Points = addCourse.Points
                         };
-                        
+
                         // Sätt kursen som aktiv för att kunna visa den i lista med kurser.
                         course.ActiveCourse = true;
-                        
+
                         ctx.Courses.Add(course);
                         ctx.SaveChanges();
-                        
+
                         // Feedback till användaren att det gick att registrera kursen.
                         TempData["success"] = "Kursen har registrerats";
                     }
@@ -88,11 +88,11 @@ namespace SchoolManagement.Controllers
                 catch
                 {
                     // Felmeddelande till användaren.
-                    TempData["error"] = "Misslyckades med att registrera kursen, försök igen";                   
+                    TempData["error"] = "Misslyckades med att registrera kursen, försök igen";
                 }
             }
             // Gå tillbaka till listan med kurser.
-            return RedirectToAction("GetAllCourses");          
+            return RedirectToAction("GetAllCourses");
         }
 
         // GET: Uppdatera en kurs
@@ -104,7 +104,7 @@ namespace SchoolManagement.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-           
+
             CourseViewModel courseToEdit;
             // Skapa en koppling till databasen.
             using (var ctx = new MinushogskolanDbEntities())
@@ -128,7 +128,7 @@ namespace SchoolManagement.Controllers
             // Returnera vyn med kursen.
             return View(courseToEdit);
         }
- 
+
 
         // POST: Uppdatera kursen
         [HttpPost]
@@ -157,13 +157,13 @@ namespace SchoolManagement.Controllers
                     ctx.SaveChanges();
 
                     // Feedback till användaren att det gick att registrera kursen.
-                    TempData["success"] = "Kursen har uppdaterats";                   
+                    TempData["success"] = "Kursen har uppdaterats";
                 }
             }
             catch
             {
                 // Felmeddelande till användaren.
-                TempData["error"] = "Misslyckades med att uppdatera kursen, försök igen";                
+                TempData["error"] = "Misslyckades med att uppdatera kursen, försök igen";
             }
 
             // Gå tillbaka till listan med kurser.
@@ -650,7 +650,7 @@ namespace SchoolManagement.Controllers
             TeacherViewModel teacher;
 
             // Skapa en koppling till databasen.
-            using(var ctx = new MinushogskolanDbEntities())
+            using (var ctx = new MinushogskolanDbEntities())
             {
                 // Ta fram läraren med det medskickade id:t för att visa vilken lärare som ska avregistreras.
                 teacher = ctx.Teachers
@@ -666,7 +666,7 @@ namespace SchoolManagement.Controllers
             }
 
             // Läraren hittades inte.
-            if(teacher == null)
+            if (teacher == null)
             {
                 return HttpNotFound();
             }
@@ -719,7 +719,7 @@ namespace SchoolManagement.Controllers
                     cvm = (from c in ctx.Courses
                            where c.Name.Contains(search)
                            select new CourseViewModel { Name = c.Name, Info = c.Info, Points = c.Points }).ToList();
-                        
+
                     ViewBag.VisaKnapp = true;
                     return View("GetAllCourses", cvm);
                 }

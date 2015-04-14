@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SchoolManagement.Models.Courses>
+﻿@model IEnumerable<SchoolManagement.ViewModels.CourseViewModel>
 
 @{
     ViewBag.Title = "Kurser";
@@ -9,15 +9,27 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="col-lg-offset-4">KURSER</h2>
-                    <div style="margin-bottom:20px;">
+                    <div class="button-margin">
+                        <form class="navbar-form navbar-right" role="search" method="post" action="@Url.Action("CourseSearch", "Home")">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Sök" name="search">
+                            </div>
+                            <button type="submit" class="btn btn-info">Sök</button>
+                            @if (ViewBag.VisaKnapp != null)
+                            {
+                                @Html.ActionLink("Reset", "GetAllCourses", null, new { @class = "btn btn-info" })
+                            }
+                        </form>
                         @*<a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="margin-top:25px">Dölj/Visa Menyn</a>*@
                         @Html.ActionLink("Dölj/Visa Menyn", "#menu-toggle", null, new { @class = "btn btn-default", @id = "menu-toggle" })
                         @Html.ActionLink("Registrera ny Kurs", "AddCourse", null, new { @class = "btn btn-primary" })
                     </div>
+                    
                     <table class="table table-hover">
                         <tr>
-                            <th></th>
-                            <th></th>
+                            <th id="printhide"></th>
+                            <th id="printhide"></th>
                             <th>
                                 @Html.DisplayNameFor(model => model.Name)
                             </th>
@@ -33,12 +45,12 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td style="width:50px;">
+                                <td id="printhide" style="width:50px;">
                                     <a href="@Url.Action("EditCourse", new{ ID = item.ID})">
                                         <span title="Uppdatera" class="glyphicon glyphicon-edit"></span>
                                     </a>
                                 </td>
-                                <td style="width:50px;">
+                                <td id="printhide" style="width:50px;">
                                     <a href="@Url.Action("DeleteCourse", new{ ID = item.ID})">
                                         <span title="Avregistrera" class="glyphicon glyphicon-trash"></span>
                                     </a>

@@ -10,12 +10,12 @@
                 <h2 class="col-lg-offset-4">STUDENTER</h2>
 
                 <div class="button-margin">
-                    <form class="navbar-form navbar-right" role="search" method="post" action="/Home/StudentSearch">
+                    <form class="navbar-form navbar-right" role="search" method="post" action="@Url.Action("StudentSearch", "Home")">
                         @Html.AntiForgeryToken()
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Sök" name="search">
                         </div>
-                        <button type="submit" class="btn btn-info">Sök</button>                        
+                        <button type="submit" class="btn btn-info">Sök</button>
                         @if (ViewBag.VisaKnapp != null)
                         {
                             @Html.ActionLink("Reset", "GetAllStudents", null, new { @class = "btn btn-info" })

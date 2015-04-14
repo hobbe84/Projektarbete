@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - MinusHögskolan</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/style.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-2.1.3.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/toastr.js"></script>
@@ -20,62 +21,62 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    </head>
+    <body>
 
-</head>
-<body>
-
-    <header>
-        <div class="jumbotron" style="margin-bottom:0px; padding:10px; z-index:2000; position:fixed; width:100%;">
-            <div class="col-md-offset-4">
-                @*<img src="~/Pictures/logotype_minushogskolan.png" />*@
-                <h2 style="color:#eee;">MinusHögskolan - Vi lär dig lite mindre än andra!</h2>
+        <header>
+            <div class="jumbotron">
+                <div class="col-md-offset-4">
+                    @*<img src="~/Pictures/logotype_minushogskolan.png" />*@
+                    <h2 class="header-style">MinusHögskolan - Vi lär dig lite mindre än andra!</h2>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">           
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="@Url.Action("Index")">START</a>                  
-                </li>
-                <li>
-                    <a href="@Url.Action("GetAllCourses")">KURSER</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("GetAllStudents")">STUDENTER</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("GetAllTeachers")">LÄRARE</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div class="container body-content">
-            @Html.Partial("~/Views/Home/_Success.cshtml")
-            <div style="margin-top:-20px">
-                @RenderBody()
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="@Url.Action("Index")">START</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("GetAllCourses")">KURSER</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("GetAllStudents")">STUDENTER</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("GetAllTeachers")">LÄRARE</a>
+                    </li>
+                </ul>
             </div>
-            <div class="modal-footer" style="margin-right:50px; margin-top:125px;">
-                <p>&copy; @DateTime.Now.Year - MinusHögskolan / <small>Code and Design by GruppTre</small> </p>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div class="container">
+                @Html.Partial("~/Views/Home/_Success.cshtml")
+                <div style="margin-top:-20px">
+                    @RenderBody()
+                </div>
+                <div class="modal-footer" style="margin-right:50px; margin-top:125px;">
+                    <p>&copy; @DateTime.Now.Year - MinusHögskolan / <small>Code and Design by GruppTre</small></p>
+                </div>
             </div>
+            <!-- /#page-content-wrapper -->
         </div>
-        <!-- /#page-content-wrapper -->
-    </div>
-    <!-- /#wrapper -->
+        <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    @*<script src="~/Scripts/jquery-2.1.3.js"></script>*@
+        <!-- jQuery -->
+        @*<script src="~/Scripts/jquery-2.1.3.js"></script>*@
 
-    <!-- Menu Toggle Script -->
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+                
+            });
     </script>
         
 </body>

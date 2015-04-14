@@ -142,3 +142,5 @@ C:\Users\Hobbe\Desktop\MinusHogskolan\SchoolManagement\bin\System.Web.WebPages.R
 C:\Users\Hobbe\Desktop\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.csprojResolveAssemblyReference.cache
 C:\Users\Hobbe\Desktop\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.dll
 C:\Users\Hobbe\Desktop\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.pdb
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.Properties.Resources.resources
+C:\Code\Projektarbete\MinusHogskolan\SchoolManagement\obj\Debug\SchoolManagement.csproj.GenerateResource.Cache
